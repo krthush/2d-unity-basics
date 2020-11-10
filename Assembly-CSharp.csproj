@@ -57,7 +57,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\EnemyGFX.cs" />
+    <Compile Include="Assets\Scripts\EnemyGFX.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\EnemyCombat.cs" />
+    <Compile Include="Assets\Combat.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -619,9 +622,17 @@
       <Project>{0C30248C-BF66-0D65-1E4F-90FAEF1B0D4A}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{B5891284-7BB0-8613-1451-7CF7ABC18C85}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
       <Project>{E0006046-A71A-047E-443E-36D94EEB9CF5}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{253AD21A-5CA8-FB84-E089-907FE156600A}</Project>
+      <Name>PackageToolsEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{9F56575E-D7BF-52D5-D2DD-75FD6E8E19B6}</Project>
@@ -646,6 +657,10 @@
     <ProjectReference Include="PsdPlugin.csproj">
       <Project>{572A8FF2-CD5F-04E7-AC46-7BBDC6FA2517}</Project>
       <Name>PsdPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{B81AE87E-3493-3D8F-0736-3980814E3BF7}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{8C3AD755-2454-9409-339A-A490B2C9143C}</Project>
@@ -714,18 +729,6 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{5733D6E2-748F-19D1-1BB6-896586C47074}</Project>
       <Name>UnityEditor.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{B5891284-7BB0-8613-1451-7CF7ABC18C85}</Project>
-      <Name>AstarPathfindingProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{253AD21A-5CA8-FB84-E089-907FE156600A}</Project>
-      <Name>PackageToolsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{B81AE87E-3493-3D8F-0736-3980814E3BF7}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

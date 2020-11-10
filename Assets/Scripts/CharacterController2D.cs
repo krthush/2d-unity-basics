@@ -113,6 +113,39 @@ public class CharacterController2D : MonoBehaviour
 
 	}
 
+	private void Flip()
+	{
+		// Switch the way the player is labelled as facing.
+		m_FacingRight = !m_FacingRight;
+
+		// Multiply the player's x local scale by -1.
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
+
+
+	// Player is grabbing walls when in air + not crouched, with 0 relative y velocity
+	private bool WallGrabActive()
+	{
+		if (!m_Grounded && m_CrouchDisableCollider != null)
+		{
+			ContactPoint2D[] contactPoints = new ContactPoint2D[10];
+			int contactCount = m_CrouchDisableCollider.GetContacts(contactPoints);
+			for (int i = 0; i < contactCount; i++)
+			{
+				// Check if contact point's collider's layer is within m_WhatIsGround layermask
+				if (m_WhatIsGround == (m_WhatIsGround | (1 << contactPoints[i].collider.gameObject.layer)))
+				{
+					if (Mathf.Abs(contactPoints[i].relativeVelocity.y) < m_WallGrabVelocity)
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -184,38 +217,4 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
     }
-
-	private void Flip()
-	{
-		// Switch the way the player is labelled as facing.
-		m_FacingRight = !m_FacingRight;
-
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-	}
-
-
-	// Player is grabbing walls when in air + not crouched, with 0 relative y velocity
-	private bool WallGrabActive()
-	{
-		if (!m_Grounded && m_CrouchDisableCollider != null)
-		{
-			ContactPoint2D[] contactPoints = new ContactPoint2D[10];
-			int contactCount = m_CrouchDisableCollider.GetContacts(contactPoints);
-			for (int i = 0; i < contactCount; i++)
-			{
-				// Check if contact point's collider's layer is within m_WhatIsGround layermask
-				if (m_WhatIsGround == (m_WhatIsGround | (1 << contactPoints[i].collider.gameObject.layer)))
-				{
-					if (Mathf.Abs(contactPoints[i].relativeVelocity.y) < m_WallGrabVelocity)
-					{
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
 }
