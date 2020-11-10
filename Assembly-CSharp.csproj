@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CharacterController2D.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\EnemyGFX.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -247,6 +248,9 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -599,6 +603,10 @@
       <Project>{563ABB74-E28B-7AF7-66F4-115D02BD98A7}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{CDA05DE3-B7D8-5CC5-ACB3-96C179002AA3}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
       <Project>{23943C90-BD48-6677-08D6-80BC16D035D7}</Project>
       <Name>Unity.2D.Animation.Runtime</Name>
@@ -679,6 +687,10 @@
       <Project>{3DB32EFE-CC0A-5A1A-FC26-68A58AA8E674}</Project>
       <Name>Unity.2D.Animation.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{4EF82940-50AE-F5F5-A8FA-431725AFE5E9}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualStudio.Editor.csproj">
       <Project>{3BB1C518-580E-E914-49FB-0D7F8EC6E4C9}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
@@ -703,13 +715,17 @@
       <Project>{5733D6E2-748F-19D1-1BB6-896586C47074}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{CDA05DE3-B7D8-5CC5-ACB3-96C179002AA3}</Project>
-      <Name>Cinemachine</Name>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{B5891284-7BB0-8613-1451-7CF7ABC18C85}</Project>
+      <Name>AstarPathfindingProject</Name>
     </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{4EF82940-50AE-F5F5-A8FA-431725AFE5E9}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{253AD21A-5CA8-FB84-E089-907FE156600A}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{B81AE87E-3493-3D8F-0736-3980814E3BF7}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
