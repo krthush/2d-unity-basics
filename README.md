@@ -1,4 +1,4 @@
-# 2d-movement
+# 2d Unity Basics
 
  2D Unity game based on brackeys tutorials, focusing on movement using unity rigid body physics.
  
